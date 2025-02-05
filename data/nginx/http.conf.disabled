@@ -1,0 +1,18 @@
+server {
+  listen        9090;
+  client_max_body_size 100m;
+
+  add_header Content-Security-Policy "default-src 'self' 'unsafe-inline' data: http://localhost:9090 http://219.254.35.248:9090 http://219.254.35.248; font-src 'self' data:;";
+  
+  # Proxy requests to the bucket "outline" to MinIO server running on port 9000
+  location /outline-bucket {
+    include /etc/nginx/conf.d/include/proxy.conf;
+    proxy_pass http://minio:9000;
+  }
+
+  # Proxy any other request to the application server running on port 9001
+  location / {
+    include /etc/nginx/conf.d/include/proxy.conf;
+    proxy_pass http://outline:3000;
+  }
+}
