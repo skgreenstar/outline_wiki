@@ -1,6 +1,5 @@
 # Docker compose for outline wiki
 
-http://chsasank.github.io/outline-self-hosted-wiki.html
 
 Features:
 
@@ -21,5 +20,3 @@ make install
 ```
 
 And follow the instructions.
-
-![make_install](http://chsasank.github.io/assets/images/outline/make_install.png)
