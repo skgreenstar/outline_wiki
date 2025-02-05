@@ -14,7 +14,6 @@ Runs the outline server with https if required
 # How to use 
 
 ```
-git clone https://github.com/chsasank/outline-wiki-docker-compose.git
 cd outline-wiki-docker-compose
 make install
 ```
